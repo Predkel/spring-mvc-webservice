@@ -1,0 +1,14 @@
+CREATE TABLE user (
+  id       BIGINT       NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  username VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE product (
+  id      BIGINT       NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  name    VARCHAR(255) NOT NULL,
+  user_id BIGINT,
+  FOREIGN KEY (user_id) REFERENCES user (id)
+);
+
+
+
