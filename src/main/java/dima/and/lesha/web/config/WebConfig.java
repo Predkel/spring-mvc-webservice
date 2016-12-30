@@ -1,6 +1,6 @@
 package dima.and.lesha.web.config;
 
-import dima.and.lesha.dao.PersistenceConfig;
+import dima.and.lesha.dao.config.PersistenceConfig;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

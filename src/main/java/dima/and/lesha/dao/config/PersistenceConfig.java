@@ -1,6 +1,7 @@
-package dima.and.lesha.dao;
+package dima.and.lesha.dao.config;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
@@ -17,6 +18,7 @@ import java.util.Properties;
 
 @Configuration
 @EnableJpaRepositories
+@ComponentScan("dima.and.lesha.dao.api")
 public class PersistenceConfig {
     @Bean
     public DataSource dataSource() {
