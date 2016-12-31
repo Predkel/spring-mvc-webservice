@@ -1,4 +1,4 @@
-package dima.and.lesha.dao.config;
+package dima.and.lesha.dao;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -18,7 +18,7 @@ import java.util.Properties;
 
 @Configuration
 @EnableJpaRepositories
-@ComponentScan("dima.and.lesha.dao.api")
+@ComponentScan("dima.and.lesha")
 public class PersistenceConfig {
     @Bean
     public DataSource dataSource() {
@@ -33,7 +33,7 @@ public class PersistenceConfig {
     public LocalContainerEntityManagerFactoryBean entityManagerFactoryBean() {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource());
-        em.setPackagesToScan("dima.and.lesha.model");
+        em.setPackagesToScan("dima.and.lesha.model","dima.and.lesha.dao.api");
         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);
         em.setJpaProperties(additionalProperties());

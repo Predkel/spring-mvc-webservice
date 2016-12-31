@@ -1,7 +1,6 @@
 package dima.and.lesha.dao;
 
 import dima.and.lesha.dao.api.UserDao;
-import dima.and.lesha.dao.config.PersistenceConfig;
 import dima.and.lesha.model.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
