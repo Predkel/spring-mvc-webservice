@@ -15,7 +15,7 @@ import org.springframework.web.servlet.view.xml.MappingJackson2XmlView;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan("dima.and.lesha.web")
+@ComponentScan("dima.and.lesha.web.controllers")
 @Import({PersistenceConfig.class})
 public class WebConfig extends WebMvcConfigurerAdapter {
     @Bean
