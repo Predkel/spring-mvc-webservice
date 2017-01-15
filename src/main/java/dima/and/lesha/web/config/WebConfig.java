@@ -1,6 +1,6 @@
 package dima.and.lesha.web.config;
 
-import dima.and.lesha.dao.PersistenceConfig;
+import dima.and.lesha.services.config.ServiceConfig;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -16,7 +16,7 @@ import org.springframework.web.servlet.view.xml.MappingJackson2XmlView;
 @Configuration
 @EnableWebMvc
 @ComponentScan("dima.and.lesha.web.controllers")
-@Import({PersistenceConfig.class})
+@Import({ServiceConfig.class})
 public class WebConfig extends WebMvcConfigurerAdapter {
     @Bean
     public MappingJackson2JsonView mappingJackson2JsonView() {

@@ -1,6 +1,7 @@
 package dima.and.lesha.model;
 
 import javax.persistence.*;
+import javax.persistence.Entity;
 
 @Entity
 @Table(name = "product")
