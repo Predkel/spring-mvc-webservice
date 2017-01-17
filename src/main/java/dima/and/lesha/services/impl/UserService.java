@@ -12,20 +12,16 @@ import java.util.List;
 
 @Service
 @Transactional(propagation = Propagation.REQUIRES_NEW, rollbackFor = Exception.class)
-public class UserService implements IUserService {
-
-    private final UserDao userDao;
+public class UserService extends dima.and.lesha.services.impl.Service<User,UserDao> implements IUserService {
 
     @Autowired
     public UserService(UserDao userDao) {
-        this.userDao = userDao;
+        super(userDao);
     }
 
-    public List<User> findByName(String username){
-        return userDao.findByUsername(username);
+    @Override
+    public List<User> findByUsername(String username) {
+        return dao.findByUsername(username);
     }
 
-    public User findOne(Long id) {
-        return userDao.findOne(id);
-    }
 }

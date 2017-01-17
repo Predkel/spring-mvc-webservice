@@ -6,15 +6,14 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@Table(name = "user")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String username;
-    @OneToMany(fetch = FetchType.EAGER)
-    @JoinColumn(name = "user_id")
-    private Set<Product> products = new HashSet<>();
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "basket_id")
+    private Basket basket;
 
     public Long getId() {
         return id;
@@ -32,11 +31,11 @@ public class User {
         this.username = username;
     }
 
-    public Set<Product> getProducts() {
-        return products;
+    public Basket getBasket() {
+        return basket;
     }
 
-    public void setProducts(Set<Product> products) {
-        this.products = products;
+    public void setBasket(Basket basket) {
+        this.basket = basket;
     }
 }

@@ -4,7 +4,7 @@ insert into USER VALUES
 (3, 'Dima')
 ;
 
-insert into product VALUES 
+insert into productType VALUES
 (1, 'polo sedan', 2),
 (2, 'peugeot 406', 1),
 (3, 'opel astra', 3);
